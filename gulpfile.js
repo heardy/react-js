@@ -42,6 +42,4 @@ gulp.task('copy', function() {
 
 gulp.task('server', ['connect',/* 'open',*/ 'watch']);
 
-gulp.task('default',['browserify', 'copy'], function () {
-    console.log(11);
-});
+gulp.task('default',['browserify', 'copy']);
