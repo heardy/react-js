@@ -24,9 +24,9 @@ gulp.task('watch', function () {
     gulp.watch(['**/src/*.html', '**/src/**/*.*'], ['default', 'html']);
 });
 
-gulp.task('open', function() {
-    open("http://localhost:" + connectOptions.port);
-});
+// gulp.task('open', function() {
+//     open("http://localhost:" + connectOptions.port);
+// });
 
 gulp.task('browserify', function() {
     gulp.src('flux/src/js/main.js')
@@ -40,7 +40,7 @@ gulp.task('copy', function() {
       .pipe(gulp.dest('dist/flux'));
 });
 
-gulp.task('server', ['connect', 'open', 'watch']);
+gulp.task('server', ['connect',/* 'open',*/ 'watch']);
 
 gulp.task('default',['browserify', 'copy'], function () {
     console.log(11);

@@ -2,23 +2,23 @@
 var React = require('react');
 var AppStore = require('../../stores/app-store.js');
 var AddToCart = require('./app-addtocart.js');
+var CatalogItem = require('./app-catalogitem.js');
+var StoreWatchMixin = require('../../mixins/StoreWatchMixin.js');
 
 function getCatalog() {
     return {items: AppStore.getCatalog()};
 }
 
 var Catalog = React.createClass({
-    getInitialState: function() {
-        return getCatalog();
-    },
+    mixins: [ StoreWatchMixin(getCatalog) ],
     render: function () {
-        var items = this.state.items.map(function (item) {
-            return <tr><td>{item.title}</td><td>{item.cost}</td><td><AddToCart item={item} /></td></tr>
+        var items = this.state.items.map(function (item, i) {
+            return <CatalogItem key={i} item={item} />
         })
         return (
-            <table className="table table-hover">
+          <div className="row">
             {items}
-            </table>
+          </div>
         );
     }
 });

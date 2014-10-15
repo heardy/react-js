@@ -13,7 +13,7 @@ for (var i = 1; i < 9; i++) {
                 'title': 'Widget #' + i,
                 'summary': 'This is an awesome widget',
                 'description': 'Lorem ipsum Nulla anim id labore quis dolor.',
-                'id': '/assets/product.png',
+                'img': 'http://placehold.it/150&text=PRODUCT%20IMAGE',
                 'cost': i
         })
 };
